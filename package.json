@@ -16,5 +16,8 @@
   "engineStrict": true,
   "engines": {
     "node": ">= 0.11.12"
+  },
+  "dependencies": {
+    "debug": "^0.7.4"
   }
 }
