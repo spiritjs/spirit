@@ -1,4 +1,5 @@
-var fs = require('fs')
+var fs = require('fs');
+var path = require('path');
 var spirit = require('../..');
 
 var graph = spirit.Graph('linecount');
@@ -125,6 +126,7 @@ graph.addEdge({ id: 'Split by Lines', port: 'out' }, { id: 'Count Lines', port: 
 graph.addEdge({ id: 'Count Lines', port: 'count' }, { id: 'Display', port: 'in' });
 
 graph.addInitial({ data: __filename }, { id: 'Read File', port: 'in' });
+graph.addInitial({ data: path.join(__dirname, '../..', 'package.json') }, { id: 'Read File', port: 'in' });
 
 //graph.removeNode('Count Lines');
 
